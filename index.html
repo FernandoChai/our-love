@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Love Story ❤️</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ff6b6b;
+            --secondary-color: #4ecdc4;
+            --accent-color: #ffd93d;
+            --dark-color: #2c3e50;
+            --light-color: #ecf0f1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            overflow-x: hidden;
+        }
+
+        .dancing-script {
+            font-family: 'Dancing Script', cursive;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><path d="M0,1000V500Q250,400 500,500T1000,500V1000Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-content {
+            text-align: center;
+            color: white;
+            z-index: 2;
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .floating-hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .heart {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.3);
+            animation: floatHeart 8s infinite linear;
+        }
+
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color) !important;
+        }
+
+        .nav-link {
+            color: var(--dark-color) !important;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+
+        /* Sections */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        .about {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        }
+
+        .romantic-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transform: translateY(0);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .romantic-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+
+        .romantic-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .romantic-text {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: #555;
+            font-style: italic;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background: white;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            opacity: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 0.9;
+        }
+
+        .gallery-overlay i {
+            font-size: 2rem;
+            color: white;
+        }
+
+        /* Video Section */
+        .videos {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: white;
+        }
+
+        .video-container {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .video-container:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            margin-bottom: 15px;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+
+        .video-placeholder {
+            background: rgba(255,255,255,0.1);
+            border: 2px dashed rgba(255,255,255,0.3);
+            border-radius: 15px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .video-placeholder:hover {
+            background: rgba(255,255,255,0.2);
+            border-color: rgba(255,255,255,0.5);
+        }
+
+        .video-title {
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .video-description {
+            text-align: center;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        /* Timeline Section */
+        .timeline {
+            background: #f8f9fa;
+        }
+
+        .timeline-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 50px 0;
+            width: 45%;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 55%;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .timeline-date {
+            background: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--accent-color);
+            border: 4px solid white;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px var(--primary-color);
+            top: 30px;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-dot {
+            right: -60px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -60px;
+        }
+
+        /* Future Plans Section */
+        .future-plans {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .plan-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.2);
+        }
+
+        .plan-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                margin: 30px 0;
+            }
+            
+            .timeline-line {
+                left: 30px;
+            }
+            
+            .timeline-dot {
+                left: 21px !important;
+            }
+            
+            .timeline-content {
+                margin-left: 60px;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand dancing-script" href="#home">❤️ Our Love Story</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Photos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#videos">Videos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#timeline">Our Journey</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#future">Future Plans</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="floating-hearts">
+            <i class="fas fa-heart heart" style="left: 10%; animation-delay: 0s; font-size: 20px;"></i>
+            <i class="fas fa-heart heart" style="left: 20%; animation-delay: 2s; font-size: 15px;"></i>
+            <i class="fas fa-heart heart" style="left: 30%; animation-delay: 4s; font-size: 25px;"></i>
+            <i class="fas fa-heart heart" style="left: 40%; animation-delay: 1s; font-size: 18px;"></i>
+            <i class="fas fa-heart heart" style="left: 50%; animation-delay: 3s; font-size: 22px;"></i>
+            <i class="fas fa-heart heart" style="left: 60%; animation-delay: 5s; font-size: 16px;"></i>
+            <i class="fas fa-heart heart" style="left: 70%; animation-delay: 2.5s; font-size: 20px;"></i>
+            <i class="fas fa-heart heart" style="left: 80%; animation-delay: 1.5s; font-size: 24px;"></i>
+            <i class="fas fa-heart heart" style="left: 90%; animation-delay: 3.5s; font-size: 19px;"></i>
+        </div>
+        <div class="hero-content">
+            <h1 class="dancing-script">Hi Orin</h1>
+            <p>Happy National Girlfriends Day!</p>
+            <a href="#about" class="btn btn-lg px-4 py-2" style="background-color: pink;">
+                <i class="fas fa-heart me-2" style="color: white;"></i>Discover Our Beautiful Journey
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2 class="dancing-script">About Our Love</h2>
+                <p>The beautiful story of how two hearts became one</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="romantic-card fade-in">
+                        <i class="fas fa-heart text-danger mb-3" style="font-size: 2rem;"></i>
+                        <p class="romantic-text">
+                            "In all the world, there is no heart for me like yours. In all the world, there is no love for you like mine. You are my today and all of my tomorrows."
+                        </p>
+                        <div class="text-end mt-3">
+                            <small class="text-muted">- For My Beautiful Girlfriend</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="romantic-card fade-in">
+                        <i class="fas fa-infinity text-danger mb-3" style="font-size: 2rem;"></i>
+                        <p class="romantic-text">
+                            "You are my sun, my moon, and all of my stars. Every moment with you feels like a beautiful dream that I never want to wake up from. Together, we create magic."
+                        </p>
+                        <div class="text-end mt-3">
+                            <small class="text-muted">- With All My Love</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section gallery">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2 class="dancing-script">Our Beautiful Moments</h2>
+                <p>Capturing memories that will last forever</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="gallery-item fade-in">
+                        <img src="img/pik.jpg" alt="Our first date - Magical Afternoon">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <p class="text-center mt-2"><em>Our First Date - Magical Afternoon</em></p>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="gallery-item fade-in">
+                        <img src="img/img2.jpg" alt="Second Date - Cozy Dinner">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <p class="text-center mt-2"><em>Our Second Date - Cozy Dinner</em></p>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="gallery-item fade-in">
+                        <img src="img/go.jpg" alt="Evening Stroll - Mall">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <p class="text-center mt-2"><em>Evening Stroll - Mall</em></p>
+                </div>
+                 <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="gallery-item fade-in">
+                        <img src="img/cfd.jpg" alt="Car Free Day - Purwakarta">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <p class="text-center mt-2"><em>Car Free Day - Purwakarta</em></p>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="gallery-item fade-in">
+                        <img src="img/jatiluhur.jpg" alt="Special Trip - JatiLuhur, Purwakarta">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <p class="text-center mt-2"><em>Special Trip - JatiLuhur, Purwakarta</em></p>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="gallery-item fade-in">
+                        <img src="img/img3.webp" alt="Chill Night - Kaze Coffee Shop">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <p class="text-center mt-2"><em>Chill Night - Kaze Coffee Shop</em></p>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="gallery-item fade-in">
+                        <img src="img/bandung.jpg" alt="First Adventure - Bandung">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <p class="text-center mt-2"><em>First Adventure - Bandung</em></p>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="gallery-item fade-in">
+                        <img src="img/kawah-putih.jpg" alt="Special Occassion - Kawah Putih">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <p class="text-center mt-2"><em>Special Occassion - Kawah Putih</em></p>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="gallery-item fade-in">
+                        <img src="img/movie.jpg" alt="First Movie Date - Sore">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <p class="text-center mt-2"><em>First Movie Date - Sore</em></p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section id="videos" class="section videos">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2 class="dancing-script">Our Video Memories</h2>
+                <p>Moments that come alive through motion</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="video-container fade-in">
+                        <div class="video-wrapper">
+                            <iframe 
+                                src="https://www.youtube.com/embed/GTLXh4o_OxM?si=NUIvpNTiGT-i6qFs"
+                                title="Love"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-title">Love❤️</div>
+                        <div class="video-description">A magical moment captured forever💫</div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="video-container fade-in">
+                        <div class="video-wrapper">
+                            <iframe 
+                                src="https://www.youtube.com/embed/a6VyesoS-Rc"
+                                title="Night After Date🌓"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-title">Night After Date🌓</div>
+                        <div class="video-description">A cozy evening spent together✨</div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="video-container fade-in">
+                        <div class="video-wrapper">
+                            <iframe 
+                                src="https://www.youtube.com/embed/HBL5TeWn7L4"
+                                title="Love"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-title">Soto Ayam on Car Free Day🚗</div>
+                        <div class="video-description">Morning Delight With Memorable Soto Ayam🍛</div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="video-container fade-in">
+                        <div class="video-wrapper">
+                            <iframe 
+                                src="https://www.youtube.com/embed/bRYy4i8wTv0"
+                                title="Love"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-title">It's Tahilalats Time🍦</div>
+                        <div class="video-description">A Fun and Flavorful Culinary Adventure💕</div>
+                    </div>
+                </div>
+                 <div class="col-lg-6 mb-4">
+                    <div class="video-container fade-in">
+                        <div class="video-wrapper">
+                            <iframe 
+                                src="https://www.youtube.com/embed/5AH9avIK2vU"
+                                title="Love"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-title">Long Distance Relationship Problem😔</div>
+                        <div class="video-description">Navigating Love Across the Miles🗺️</div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="video-container fade-in">
+                        <div class="video-wrapper">
+                            <iframe 
+                                src="https://www.youtube.com/embed/KNpb6ACZ-Ro"
+                                title="Love"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-title">Its' Matcha Time🍵</div>
+                        <div class="video-description">Savoring the Flavors of Love💗</div>
+                    </div>
+                </div>
+                 <div class="col-lg-6 mb-4">
+                    <div class="video-container fade-in">
+                        <div class="video-wrapper">
+                            <iframe 
+                                src="https://www.youtube.com/embed/w2ZnUV78dFE"
+                                title="Love"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-title">Act Fool😜</div>
+                        <div class="video-description">Shy Moments Captured☺️</div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="video-container fade-in">
+                        <div class="video-wrapper">
+                            <iframe 
+                                src="https://www.youtube.com/embed/K5gY3HdO_Uc"
+                                title="Love"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-title">Spending Time With Beautiful Person In My Life🫠</div>
+                        <div class="video-description">Cherishing Every Moment Together💖</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="section timeline">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2 class="dancing-script">Our Memory Path</h2>
+                <p>The journey of our hearts becoming one</p>
+            </div>
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">First Meeting</div>
+                        <h4>The Day Everything Changed</h4>
+                        <p>It was a beautiful sunny day when our eyes first met. I never believed in love at first sight until that magical moment. The world seemed to stop, and all I could see was you.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">First Date</div>
+                        <h4>Coffee and Conversations</h4>
+                        <p>Our first official date at that cozy little café downtown. We talked for hours about everything and nothing. I knew right then that I wanted to spend the rest of my life getting to know you better.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">First "I Love You"</div>
+                        <h4>Three Little Words</h4>
+                        <p>Under the starlit sky in the park, I finally found the courage to tell you those three words that had been burning in my heart. Your smile was worth every nervous moment leading up to it.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Our First Trip</div>
+                        <h4>Adventure Together</h4>
+                        <p>Our first getaway together was pure magic. From sunrise walks on the beach to midnight conversations under the stars, every moment was perfect because I was sharing it with you.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Moving In Together</div>
+                        <h4>Home is Where You Are</h4>
+                        <p>The day we decided to move in together, I realized that home isn't a place – it's wherever you are. Building our little nest together has been one of life's greatest joys.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Plans Section -->
+    <section id="future" class="section future-plans">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2 class="dancing-script">Our Future Together</h2>
+                <p>Dreams we'll make reality, side by side</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="plan-card fade-in">
+                        <div class="plan-icon">
+                            <i class="fas fa-plane"></i>
+                        </div>
+                        <h4>Travel the World</h4>
+                        <p>Explore beautiful destinations together, creating memories in every corner of the earth.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="plan-card fade-in">
+                        <div class="plan-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h4>Our Dream Home</h4>
+                        <p>Build a beautiful home where our love can grow and flourish for years to come.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="plan-card fade-in">
+                        <div class="plan-icon">
+                            <i class="fas fa-ring"></i>
+                        </div>
+                        <h4>Forever Promise</h4>
+                        <p>Make our commitment official and promise to love each other for all eternity.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="plan-card fade-in">
+                        <div class="plan-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h4>Growing Old Together</h4>
+                        <p>Hand in hand, watching sunsets and creating new adventures even in our golden years.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Every day with you is a wonderful addition to my life's journey.</p>
+            <div class="mt-4">
+                <p class="mb-0">"I love you not only for what you are, but for what I am when I am with you."</p>
+                <small>- Roy Croft</small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            // Smooth scrolling for navigation links
+            $('a[href^="#"]').on('click', function(event) {
+                var target = $(this.getAttribute('href'));
+                if(target.length) {
+                    event.preventDefault();
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top - 80
+                    }, 1000);
+                }
+            });
+
+            // Navbar background change on scroll
+            $(window).scroll(function() {
+                if ($(window).scrollTop() > 50) {
+                    $('.navbar').addClass('scrolled');
+                } else {
+                    $('.navbar').removeClass('scrolled');
+                }
+            });
+
+            // Fade in animation on scroll
+            function checkFadeIn() {
+                $('.fade-in').each(function() {
+                    var elementTop = $(this).offset().top;
+                    var elementBottom = elementTop + $(this).outerHeight();
+                    var viewportTop = $(window).scrollTop();
+                    var viewportBottom = viewportTop + $(window).height();
+
+                    if (elementBottom > viewportTop && elementTop < viewportBottom) {
+                        $(this).addClass('visible');
+                    }
+                });
+            }
+
+            // Check on page load and scroll
+            checkFadeIn();
+            $(window).scroll(checkFadeIn);
+
+            // Gallery lightbox effect
+            $('.gallery-item').click(function() {
+                var imgSrc = $(this).find('img').attr('src');
+                var imgAlt = $(this).find('img').attr('alt');
+                
+                // Create modal HTML
+                var modalHTML = `
+                    <div class="modal fade" id="imageModal" tabindex="-1">
+                        <div class="modal-dialog modal-lg modal-dialog-centered">
+                            <div class="modal-content bg-transparent border-0">
+                                <div class="modal-body p-0 text-center">
+                                    <button type="button" class="btn-close btn-close-white position-absolute" 
+                                            style="top: 10px; right: 10px; z-index: 1051;" 
+                                            data-bs-dismiss="modal"></button>
+                                    <img src="${imgSrc}" alt="${imgAlt}" class="img-fluid rounded" 
+                                         style="max-height: 80vh;">
+                                    <p class="text-white mt-3 fs-5">${imgAlt}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                // Remove existing modal and add new one
+                $('#imageModal').remove();
+                $('body').append(modalHTML);
+                $('#imageModal').modal('show');
+            });
+
+            // Heart animation
+            function createHeart() {
+                var heart = $('<i class="fas fa-heart heart"></i>');
+                heart.css({
+                    'left': Math.random() * 100 + '%',
+                    'animation-delay': Math.random() * 8 + 's',
+                    'font-size': (Math.random() * 10 + 15) + 'px'
+                });
+                $('.floating-hearts').append(heart);
+                
+                // Remove heart after animation
+                setTimeout(function() {
+                    heart.remove();
+                }, 8000);
+            }
+
+            // Create hearts periodically
+            setInterval(createHeart, 2000);
+
+            // Add hover effects to cards
+            $('.romantic-card, .plan-card, .timeline-content').hover(
+                function() {
+                    $(this).find('i').addClass('animate__animated animate__pulse');
+                },
+                function() {
+                    $(this).find('i').removeClass('animate__animated animate__pulse');
+                }
+            );
+
+            // Video placeholder click effect
+            $('.video-placeholder').click(function() {
+                $(this).addClass('animate__animated animate__pulse');
+                setTimeout(() => {
+                    $(this).removeClass('animate__animated animate__pulse');
+                }, 1000);
+                
+                // You can add actual video player logic here
+                alert('Add your video embed code here!\n\nFor YouTube videos, use:\n<iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>');
+            });
+
+            // Add typing effect to hero text
+            function typeWriter(element, text, speed = 100) {
+                let i = 0;
+                element.innerHTML = '';
+                
+                function type() {
+                    if (i < text.length) {
+                        element.innerHTML += text.charAt(i);
+                        i++;
+                        setTimeout(type, speed);
+                    }
+                }
+                type();
+            }
+
+            // Apply typing effect after page load
+            setTimeout(function() {
+                const heroP = document.querySelector('.hero p');
+                const originalText = heroP.textContent;
+                typeWriter(heroP, originalText, 80);
+            }, 1500);
+
+            // Add parallax effect to hero section
+            $(window).scroll(function() {
+                var scrolled = $(window).scrollTop();
+                var parallax = $('.hero');
+                var speed = scrolled * 0.5;
+                parallax.css('transform', 'translateY(' + speed + 'px)');
+            });
+
+           
+
+            // Add floating animation to plan cards
+            $('.plan-card').each(function(index) {
+                $(this).css('animation-delay', (index * 0.2) + 's');
+                $(this).addClass('animate-float');
+            });
+
+            // Custom CSS for floating animation
+            $('<style>')
+                .prop('type', 'text/css')
+                .html(`
+                    .animate-float {
+                        animation: float 3s ease-in-out infinite;
+                    }
+                    .animate-float:nth-child(2n) {
+                        animation-direction: reverse;
+                    }
+                    @keyframes float {
+                        0%, 100% { transform: translateY(0px); }
+                        50% { transform: translateY(-10px); }
+                    }
+                    .scrolled {
+                        background: rgba(255, 255, 255, 0.98) !important;
+                        box-shadow: 0 2px 25px rgba(0,0,0,0.15) !important;
+                    }
+                    .timeline-content.expanded {
+                        transform: scale(1.02);
+                        box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+                    }
+                `)
+                .appendTo('head');
+
+            // Add love quotes that change
+            const loveQuotes = [
+                "You are my today and all of my tomorrows.",
+                "In all the world, there is no heart for me like yours.",
+                "You are my sun, my moon, and all of my stars.",
+                "Every love story is beautiful, but ours is my favorite.",
+                "I love you not only for what you are, but for what I am when I am with you."
+            ];
+
+            let quoteIndex = 0;
+            setInterval(function() {
+                $('.romantic-text').fadeOut(500, function() {
+                    $(this).text('"' + loveQuotes[quoteIndex] + '"').fadeIn(500);
+                    quoteIndex = (quoteIndex + 1) % loveQuotes.length;
+                });
+            }, 5000);
+
+            // Add interactive elements to footer
+            $('.footer').hover(function() {
+                $(this).find('h3').addClass('animate__animated animate__heartBeat');
+            }, function() {
+                $(this).find('h3').removeClass('animate__animated animate__heartBeat');
+            });
+            
+            // Add a special surprise - click the main title 5 times
+            let clickCount = 0;
+            $('.hero h1').click(function() {
+                clickCount++;
+                if (clickCount === 5) {
+                    // Special surprise animation
+                    $('body').addClass('animate__animated animate__pulse');
+                    
+                    // Create a shower of hearts
+                    for (let i = 0; i < 20; i++) {
+                        setTimeout(function() {
+                            createHeart();
+                        }, i * 100);
+                    }
+                    
+                    // Show special message
+                    setTimeout(function() {
+                        alert('💕 You found our secret! You clicked our love 5 times! 💕\n\nJust like how I fall in love with you more and more each day!');
+                        clickCount = 0;
+                    }, 2000);
+                    
+                    setTimeout(function() {
+                        $('body').removeClass('animate__animated animate__pulse');
+                    }, 3000);
+                }
+            });
+        });
+
+        // Add some CSS animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes heartBeat {
+                0% { transform: scale(1); }
+                14% { transform: scale(1.3); }
+                28% { transform: scale(1); }
+                42% { transform: scale(1.3); }
+                70% { transform: scale(1); }
+            }
+            
+            .animate__heartBeat {
+                animation: heartBeat 1.5s ease-in-out;
+            }
+            
+            .animate__pulse {
+                animation: pulse 1s ease-in-out;
+            }
+            
+            @keyframes pulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.05); }
+                100% { transform: scale(1); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+
+</body>
+</html>
